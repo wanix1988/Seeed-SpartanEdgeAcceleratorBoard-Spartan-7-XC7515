@@ -16,9 +16,11 @@ Seeed Studio 的 **Spartan Edge Accelerator Board**（简称 SEA Board，SKU `10
   - <https://media.digikey.com/Resources/Seeed/SEA-Dev-Manual-ESP32.pdf>
   - <https://media.digikey.com/Resources/Seeed/SEA-Dev-Manual-Experiment.pdf>
 
-ESP32 加载 bitstream 的库按 [wanix1988/spartan-edge-esp32-boot](https://github.com/wanix1988/spartan-edge-esp32-boot) 开发。Wiki 原链接 [sea-s7/spartan-edge-esp32-boot](https://github.com/sea-s7/spartan-edge-esp32-boot) 已不可用，内容来自 [Pillar1989/spartan-edge-esp32-boot](https://github.com/Pillar1989/spartan-edge-esp32-boot)。本地副本在 `E:\opensource\spartan-edge-esp32-boot`，`origin` 指向上述 fork，`upstream` 指向 Pillar1989。
+ESP32 加载 bitstream 的库按 [wanix1988/spartan-edge-esp32-boot](https://github.com/wanix1988/spartan-edge-esp32-boot) 开发。Wiki 原链接 [sea-s7/spartan-edge-esp32-boot](https://github.com/sea-s7/spartan-edge-esp32-boot) 已不可用，内容来自 [Pillar1989/spartan-edge-esp32-boot](https://github.com/Pillar1989/spartan-edge-esp32-boot)。
 
-案例仓库（Hello-World / Examples / Demos）按 [wanix1988/SEA](https://github.com/wanix1988/SEA) 开发，内容来自 [DoneSEA/SEA](https://github.com/DoneSEA/SEA)。本地副本在 `E:\opensource\SEA`，`origin` 指向上述 fork，`upstream` 指向 DoneSEA。
+案例仓库（Hello-World / Examples / Demos）按 [wanix1988/SEA](https://github.com/wanix1988/SEA) 开发，内容来自 [DoneSEA/SEA](https://github.com/DoneSEA/SEA)。
+
+可移植的算法、图像、视频和网络包处理项目见 [awesome-projects.md](awesome-projects.md)。
 
 ## 目录
 
