@@ -20,7 +20,7 @@ ESP32 加载 bitstream 的库按 [wanix1988/spartan-edge-esp32-boot](https://git
 
 案例仓库（Hello-World / Examples / Demos）按 [wanix1988/SEA](https://github.com/wanix1988/SEA) 开发，内容来自 [DoneSEA/SEA](https://github.com/DoneSEA/SEA)。
 
-可移植的算法、图像、视频和网络包处理项目见 [awesome-projects.md](awesome-projects.md)。
+可移植的算法、图像、视频和网络包处理项目见 [awesome-projects.md](awesome-projects.md)。浏览器里的实验台在仓库的 `web/` 目录。
 
 ## 目录
 

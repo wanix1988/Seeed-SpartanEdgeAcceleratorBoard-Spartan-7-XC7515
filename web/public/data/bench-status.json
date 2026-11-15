@@ -1,0 +1,23 @@
+{
+  "board": "Spartan Edge Accelerator Board",
+  "fpga": "XC7S15-1FTGB196C",
+  "part": "xc7s15ftgb196-1",
+  "wireless": "ESP32-D0WDQ6",
+  "tool": "Vivado 2018.2",
+  "mode": "K5 = Slave 时由 ESP32 从 microSD 加载 bitstream；K5 = JTAG 时用 Vivado Hardware Manager",
+  "flashed": "尚未记录。完成一个实验后，把器件名和 bitstream 文件名写在这里。",
+  "links": [
+    {
+      "label": "案例仓库",
+      "href": "https://github.com/wanix1988/SEA"
+    },
+    {
+      "label": "ESP32 加载库",
+      "href": "https://github.com/wanix1988/spartan-edge-esp32-boot"
+    },
+    {
+      "label": "Seeed Wiki",
+      "href": "https://wiki.seeedstudio.com/Spartan-Edge-Accelerator-Board/"
+    }
+  ]
+}
