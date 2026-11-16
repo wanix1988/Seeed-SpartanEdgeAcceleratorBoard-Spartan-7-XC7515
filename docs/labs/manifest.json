@@ -1,0 +1,248 @@
+[
+  {
+    "id": "E01",
+    "number": 1,
+    "title_en": "Familiar with Development Board and Vivado Compilation",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=12",
+    "start_page": 12,
+    "purpose_en": "1. Familiar with the logic resources and peripheral resources of the SEA development board. 2. Familiar with Vivado's compilation environment. 3. Familiar with the programming and development flow using Verilog language under the Vivado environment, including source program writing, compilation, simulation and program download.",
+    "content_en": "1. Hello Word program programming under Vivado environment. 2. Timing waveform simulation. 3. Download verification. 1.3",
+    "requirement_en": "1. The simulation of the working conditions of simple circuits is completed under the Vivado environment. 2. Complete the download of the configuration program and verify the program on the SEA development board. 1.4",
+    "title_zh": "熟悉开发板与 Vivado 环境",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Hello-World/FPGA",
+      "https://github.com/wanix1988/SEA/tree/master/Hello-World/FPGA/Verilog"
+    ],
+    "repo_path": "fpga/01-blink"
+  },
+  {
+    "id": "E02",
+    "number": 2,
+    "title_en": "Combinational Logic Circuit Design",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=29",
+    "start_page": 29,
+    "purpose_en": "1. Learn the basic grammar of verilog. 2. Master the programming design method of combinatorial logic (such as 4-2 encoder, 2-4 decoder). 3. Consolidate the foundation of Verilog programming design under the Vivado environment.",
+    "content_en": "1. Achieve the combinational logic: encoder/decoder (4-2 encoder, 2-4 decoder). 2. Complete timing waveform simulation. 3. Bind pins to I/O and LED for download verification. 2.3",
+    "requirement_en": "1. Write the combinational logic code on the PC and compile it comprehensively. 2. Complete the corresponding timing simulation and analyze the results. 3. Download verification and observe experimental phenomena. 2.4",
+    "title_zh": "组合逻辑设计",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/1.Digital-Circuits/1.Combination-Logic-Circuit-Design"
+    ],
+    "repo_path": "fpga/02-combo-logic"
+  },
+  {
+    "id": "E03",
+    "number": 3,
+    "title_en": "Call of IP Core",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=35",
+    "start_page": 35,
+    "purpose_en": "1. Familiar with the call of IP core in Vivado 2. Master the use of the existing IP core in the SEA development board (the IP core of RGB-LED)",
+    "content_en": "1. Implement system IP core call 2. Implement the call of existing IP core (IP core of RGB LED) 3.3",
+    "requirement_en": "1. Proficient in the call of IP core in the experiment. 3.4",
+    "title_zh": "调用 IP 核",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA-IP/RGB-LED-IP",
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/2.Community-Interface"
+    ],
+    "repo_path": "fpga/03-ip-core"
+  },
+  {
+    "id": "E04",
+    "number": 4,
+    "title_en": "Sequential Logic Circuit Design (1)",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=44",
+    "start_page": 44,
+    "purpose_en": "1. Understand the concept of counter and flip-flop. 2. Master the program design method of sequential logic such as counter. 4.2",
+    "content_en": "1. Flip-flop (D type). 2. Implement the counter by yourself (such as module 5 counter). 3. Download verification. 4.3",
+    "requirement_en": "1. Perform timing simulation in vivado environment. 2. Complete the download, verify the program on the experiment board, and use an oscilloscope to observe the waveform if necessary. 4.4",
+    "title_zh": "时序逻辑（一）",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/1.Digital-Circuits/2.Sequential-Logic-Circuit-Design"
+    ],
+    "repo_path": "fpga/04-sequential-1"
+  },
+  {
+    "id": "E05",
+    "number": 5,
+    "title_en": "Sequential logic circuit design (2)",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=54",
+    "start_page": 54,
+    "purpose_en": "1. Familiar with the concept of clock. 2. Master the design methods of basic sequential logic such as frequency divider. 5.2",
+    "content_en": "1. Implement the frequency divider by itself (system main frequency is 100MHz, then divide by 5 to generate 20MHz signal). 5.3",
+    "requirement_en": "1. Perform waveform simulation in vivado environment and compare with the sample frequency divider. 2. Download and verify, view the waveform with an oscilloscope. 5.4",
+    "title_zh": "时序逻辑（二）",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/1.Digital-Circuits/2.Sequential-Logic-Circuit-Design"
+    ],
+    "repo_path": "fpga/05-sequential-2"
+  },
+  {
+    "id": "E06",
+    "number": 6,
+    "title_en": "State Machine Design (1)",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=59",
+    "start_page": 59,
+    "purpose_en": "1. Familiar with Moore type finite state machine. 6.2",
+    "content_en": "1. Carry out a code lock design (such as 10010) to realize a Moore finite state machine. 2. Use Moore finite state machine to realize key decryption and light up LED lights. 6.3",
+    "requirement_en": "1.Design the password sequence by yourself, implement the Moore-type finite state machine, and perform timing simulation under the Vivado environment. 2.Download verification and observe the experimental results. 6.4",
+    "title_zh": "状态机（Moore）",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/1.Digital-Circuits/3.State-Machine-Design"
+    ],
+    "repo_path": "fpga/06-fsm-moore"
+  },
+  {
+    "id": "E07",
+    "number": 7,
+    "title_en": "State Machine Design (2)",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=64",
+    "start_page": 64,
+    "purpose_en": "1. Familiar with Mealy type finite state machine. 7.2",
+    "content_en": "1. Gray encoding and One-hot encoding two state machines. 2. The flip-flop part and the combinational logic part combine and separate two state machines. 7.3",
+    "requirement_en": "1. Make a slight modification to the state and output in the program, and perform timing simulation in the Vivado environment. 2. Download verification. 7.4",
+    "title_zh": "状态机（Mealy）",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/1.Digital-Circuits/3.State-Machine-Design"
+    ],
+    "repo_path": "fpga/07-fsm-mealy"
+  },
+  {
+    "id": "E08",
+    "number": 8,
+    "title_en": "IP Core Packaging",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=68",
+    "start_page": 68,
+    "purpose_en": "1. Familiar with the IP core packaging method provided by Vivado. 8.2",
+    "content_en": "1. Package the frequency divider designed in Experiment 4 into an IP core and call the test. 8.3",
+    "requirement_en": "1. Complete the packaging of the IP core. 2. Verify the IP core after packaging and perform timing simulation. 3. Download and verify, and view it with an oscilloscope if necessary. 8.4",
+    "title_zh": "IP 核封装",
+    "sea_paths": [],
+    "repo_path": "fpga/08-ip-packaging"
+  },
+  {
+    "id": "E09",
+    "number": 9,
+    "title_en": "DAC Waveform Generation",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=71",
+    "start_page": 71,
+    "purpose_en": "1. Familiar with the use of DAC peripherals on the SEA development board. 2. Master the waveform generator. 9.2",
+    "content_en": "1. Understand the principle of different frequencies and amplitudes of DAC generated waveform, and master the process of Matlab generating .coe files. 3. Design sine wave, triangle wave and square wave with adjustable frequency and amplitude. 9.3",
+    "requirement_en": "1. Use Matlab, generate a .coe file with 256 sampling points for sine wave, triangle wave, and square wave. 2. Perform the design of ROM address decoding, realize adjustable frequency, phase and amplitude, and use DAC module to generate waveform. 3. Perform timing simulation, download and verify with oscilloscope. 9.4",
+    "title_zh": "DAC 波形发生",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/5.Data-Interface",
+      "https://github.com/wanix1988/SEA/tree/master/Demos/6.Instrumentation"
+    ],
+    "repo_path": "fpga/09-dac-waveform"
+  },
+  {
+    "id": "E10",
+    "number": 10,
+    "title_en": "HDMI Video Display Output",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=80",
+    "start_page": 80,
+    "purpose_en": "1. Familiar with Mini HDMI peripherals and video signal output format. 10.2",
+    "content_en": "1. Check the HDMI timing of 1080p to realize HDMI driver. 2. Use Matlab, read the picture (100*100), and save the picture data as a coe file. 3. Write the image generation module, and use HDMI to display the picture on the screen. 10.3",
+    "requirement_en": "1. Master the HDMI driver and use Matlab to store image data. 3. According to the existing driver and ROM IP core, realize the picture display. 10.4",
+    "title_zh": "HDMI 视频输出",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/4.Module-Interface",
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA-IP/HDMI-IP"
+    ],
+    "repo_path": "fpga/10-hdmi-output"
+  },
+  {
+    "id": "E11",
+    "number": 11,
+    "title_en": "MIPI Camera Video Input",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=90",
+    "start_page": 90,
+    "purpose_en": "1. Familiar with MIPI camera peripherals. 2. Master the camera interface signal control and data reading. 11.2",
+    "content_en": "1. Use the camera driver module and HDMI to realize real-time video display. 11.3",
+    "requirement_en": "1. Master the data reading of the camera module. 2. Realize HDMI real-time display image. 11.4",
+    "title_zh": "MIPI 摄像头输入",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/4.Module-Interface",
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA-IP/Camera-IP"
+    ],
+    "repo_path": "fpga/11-mipi-camera"
+  },
+  {
+    "id": "E12",
+    "number": 12,
+    "title_en": "Video Image Processing",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=98",
+    "start_page": 98,
+    "purpose_en": "1. Familiar with the design methods of basic video processing (such as edge extraction). 12.2",
+    "content_en": "1. Master the principle of edge extraction and image processing methods under limited resources. 3. Use shift register and sobel operator to realize edge extraction. 12.3",
+    "requirement_en": "1. See the principle of edge detection. 2. Master the use of shift registers and realize edge detection. 12.4",
+    "title_zh": "视频图像处理",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Demos/3.Image-Processing",
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA-IP/Image-Process-IP"
+    ],
+    "repo_path": "fpga/12-video-processing"
+  },
+  {
+    "id": "E13",
+    "number": 13,
+    "title_en": "Single Trace Oscilloscope",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=113",
+    "start_page": 113,
+    "purpose_en": "1. Master the use of ADC peripherals. 2. Comprehensive HDMI display, familiar with the design method of oscilloscope. 13.2",
+    "content_en": "1. Master the principle of oscilloscope display waveform, and realize the oscilloscope display waveform generated by the signal generator. 13.3",
+    "requirement_en": "1. Check the principle of the oscilloscope's display waveform and realize the waveform display. 13.4",
+    "title_zh": "单通道简易示波器",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Demos/6.Instrumentation"
+    ],
+    "repo_path": "fpga/13-oscilloscope"
+  },
+  {
+    "id": "E14",
+    "number": 14,
+    "title_en": "Machine Vision",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=128",
+    "start_page": 128,
+    "purpose_en": "1. Familiar with color recognition and shape recognition. 14.2",
+    "content_en": "1. Master the algorithm of shape recognition. 2. Master the spatial domain transformation from RGB to HSV and master the algorithm of color tracking. 14.3",
+    "requirement_en": "1. Check the principle of RGB to HSV, and carry out RGB to HSV, HSV to RGB spatial conversion. 2. Check the shape recognition algorithm, and test it according to the existing program, and use HSV spatial data for color recognition and tracking. 14.4",
+    "title_zh": "机器视觉",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Demos/3.Image-Processing"
+    ],
+    "repo_path": "fpga/14-machine-vision"
+  },
+  {
+    "id": "E15",
+    "number": 15,
+    "title_en": "SPI Protocol and Arduino Interface Control",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=144",
+    "start_page": 144,
+    "purpose_en": "1. Familiar with the SPI protocol. 2. Master the interface communication and control of SEA to Arduino. 15.2",
+    "content_en": "1. Master the SPI protocol. 2. Master SPI controller design. 3. Master the interface communication and control of FPGA to Arduino. 15.3",
+    "requirement_en": "1. Check the specific content of the SPI protocol and understand the timing of the SPI protocol. 2. According to some of the provided routines, design the SPI controller. 3. Realize the interface communication between FPGA and Arduino. 15.4",
+    "title_zh": "SPI 与 Arduino 接口",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Examples/FPGA/6.Extension-Interface",
+      "https://github.com/wanix1988/SEA/tree/master/Demos/7.Interface"
+    ],
+    "repo_path": "fpga/15-spi-arduino"
+  },
+  {
+    "id": "E16",
+    "number": 16,
+    "title_en": "QSPI communication between ESP32 and FPGA",
+    "manual": "docs/manuals/SEA-Dev-Manual-Experiment.pdf#page=155",
+    "start_page": 155,
+    "purpose_en": "1. Familiar with the QSPI communication protocol, and learn the QSPI communication method between ESP32 and FPGA. 2. Learn how to use the QSPI port on ESP32 and Arduino side; 3. Learn the RTL design of the QSPI slave on the FPGA side. 16.2",
+    "content_en": "1. Use Micropython to implement QSPI interface (host) on ESP32, and use Arduino IDE to call ESP32 QSPI interface (master). 2. Use Verilog HDL language to complete the circuit design of the QSPI slave on the FPGA side. 3. The ESP32 side sends data to 0x00 ~ 0x1F of FPGA internal RAM for storage through the QSPI interface. 4. Arduino side sends and reads and writes the 0x00 ~ 0x01 data of FPGA internal RAM through QSPI interface. 5. On the FPGA side, build a simple addition module and store the calculation result in the address 0x10 ~ 0x1F. 6. Use QSPI on the ESP32 side to read the data from 0x10 ~ 0x1F and check whether the result is correct. 16.3",
+    "requirement_en": "1. Familiar with ESP32 firmware usage and software programming. 2. Familiar with Arduino software programming. 3. Familiar with QSPI protocol. 16.4",
+    "title_zh": "ESP32 与 FPGA 的 QSPI",
+    "sea_paths": [
+      "https://github.com/wanix1988/SEA/tree/master/Demos/6.Instrumentation/ESP32-QSPI-FPGA-Waveform-Generator",
+      "https://github.com/wanix1988/SEA/tree/master/Examples/ESP32"
+    ],
+    "repo_path": "esp32/qspi-fpga"
+  }
+]

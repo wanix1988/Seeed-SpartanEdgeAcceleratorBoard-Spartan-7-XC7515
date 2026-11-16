@@ -1,0 +1,21 @@
+{
+  "base": "https://github.com/wanix1988/SEA/tree/master",
+  "experiments": {
+    "E01": ["Hello-World/FPGA", "Hello-World/FPGA/Verilog"],
+    "E02": ["Examples/FPGA/1.Digital-Circuits/1.Combination-Logic-Circuit-Design"],
+    "E03": ["Examples/FPGA-IP/RGB-LED-IP", "Examples/FPGA/2.Community-Interface"],
+    "E04": ["Examples/FPGA/1.Digital-Circuits/2.Sequential-Logic-Circuit-Design"],
+    "E05": ["Examples/FPGA/1.Digital-Circuits/2.Sequential-Logic-Circuit-Design"],
+    "E06": ["Examples/FPGA/1.Digital-Circuits/3.State-Machine-Design"],
+    "E07": ["Examples/FPGA/1.Digital-Circuits/3.State-Machine-Design"],
+    "E08": [],
+    "E09": ["Examples/FPGA/5.Data-Interface", "Demos/6.Instrumentation"],
+    "E10": ["Examples/FPGA/4.Module-Interface", "Examples/FPGA-IP/HDMI-IP"],
+    "E11": ["Examples/FPGA/4.Module-Interface", "Examples/FPGA-IP/Camera-IP"],
+    "E12": ["Demos/3.Image-Processing", "Examples/FPGA-IP/Image-Process-IP"],
+    "E13": ["Demos/6.Instrumentation"],
+    "E14": ["Demos/3.Image-Processing"],
+    "E15": ["Examples/FPGA/6.Extension-Interface", "Demos/7.Interface"],
+    "E16": ["Demos/6.Instrumentation/ESP32-QSPI-FPGA-Waveform-Generator", "Examples/ESP32"]
+  }
+}

@@ -20,7 +20,7 @@ ESP32 加载 bitstream 的库按 [wanix1988/spartan-edge-esp32-boot](https://git
 
 案例仓库（Hello-World / Examples / Demos）按 [wanix1988/SEA](https://github.com/wanix1988/SEA) 开发，内容来自 [DoneSEA/SEA](https://github.com/DoneSEA/SEA)。
 
-可移植的算法、图像、视频和网络包处理项目见 [awesome-projects.md](awesome-projects.md)。浏览器里的实验台在仓库的 `web/` 目录。已经查清的问题记在 [issues.md](issues.md)。
+可移植的算法、图像、视频和网络包处理项目见 [awesome-projects.md](awesome-projects.md)。浏览器里的实验台在仓库的 `web/` 目录；**三册手册全部 16 个综合实验 + FPGA/ESP32 章节导读** 已编入 [labs/README.md](labs/README.md)。已经查清的问题记在 [issues.md](issues.md)。
 
 ## 目录
 
@@ -53,6 +53,14 @@ ESP32 加载 bitstream 的库按 [wanix1988/spartan-edge-esp32-boot](https://git
 | `SEA-Dev-Manual-Experiment.pdf` | 综合实验（逻辑、IP、DAC / HDMI / MIPI、图像处理等） |
 
 手册约定的 FPGA 工具版本为 **Vivado 2018.2**，目标器件 `xc7s15ftgb196-1`。
+
+### `labs/` 实验整合
+
+| 文件 | 说明 |
+| --- | --- |
+| [labs/README.md](labs/README.md) | 三册手册与本地 `fpga/`、`esp32/`、Web 课号（E01–E16、F01–F04、S01–S06）对照 |
+| [labs/manifest.json](labs/manifest.json) | 从实验手册 PDF 提取的元数据 |
+| [labs/sea-map.json](labs/sea-map.json) | 各实验对应的 wanix1988/SEA 路径 |
 
 ### `wiki/` 与 `images/`
 

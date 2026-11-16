@@ -1,14 +1,23 @@
-# SEA Labs
+# SEA Labs 网页实验台
 
-Spartan Edge Accelerator Board 的浏览器实验台。结构参考 [ESP32 Labs](https://github.com/wanix1988/esp-labs-web)：实验是数据，先仿真再上板，步骤勾选保存在浏览器本地。
+## 启动
 
-```sh
+```powershell
 cd web
 npm install
-npm test
 npm run dev
 ```
 
-打开 http://127.0.0.1:5180 。`npm run build` 生成 `dist/`，可用任意静态服务器打开。
+浏览器打开 **http://localhost:5180/** 或 **http://127.0.0.1:5180/**（不要直接双击 `index.html`，需要用开发服务器）。
 
-器件是 XC7S15-1FTGB196C（Vivado 器件名 `xc7s15ftgb196-1`）。案例代码在 [wanix1988/SEA](https://github.com/wanix1988/SEA)，ESP32 加载库在 [wanix1988/spartan-edge-esp32-boot](https://github.com/wanix1988/spartan-edge-esp32-boot)。
+若提示端口占用，先结束旧的 Node 进程，或执行：
+
+```powershell
+npm run build
+npm run preview
+```
+
+## 说明
+
+- 使用 Hash 路由（`#/board`、`#/lessons/01`）。
+- `experimentCatalog.ts` 由 `scripts/gen-web-manual-lessons.py` 生成；勿与 `catalog.ts` 形成循环依赖（类型在 `catalog-types.ts`）。

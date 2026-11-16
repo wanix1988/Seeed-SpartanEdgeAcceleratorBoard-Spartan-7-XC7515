@@ -25,9 +25,22 @@ export function Simulator({ widget }: { widget: WidgetId }) {
       return <AesSim />;
     case "packet":
       return <PacketSim />;
+    case "manual":
+      return <ManualSim />;
     default:
       return null;
   }
+}
+
+function ManualSim() {
+  return (
+    <div className="sim">
+      <p>
+        本课正文与分步清单已在页面内嵌（摘自官方手册）。在 Vivado / uPyCraft / Arduino 中按步骤操作，用 JTAG 或 K5=Slave 验证即可；无单独网页仿真时可对照板上 LED、HDMI
+        等直观现象。
+      </p>
+    </div>
+  );
 }
 
 function PowerSim() {

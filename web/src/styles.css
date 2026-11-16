@@ -90,6 +90,7 @@ main { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
 .track b { color: var(--trace); }
 .track i { margin-left: auto; font-style: normal; color: var(--hot); }
 .dock { display: flex; gap: 8px; margin: 12px 0 18px; }
+.lang-dock { margin-top: 0; margin-bottom: 12px; }
 .dock button.on, .sim button.on, .part-list button.on { background: var(--hot); color: #10210e; border-color: transparent; }
 section { margin: 22px 0; }
 h2 { font-size: 1.05rem; }
@@ -312,6 +313,36 @@ pre, .terminal {
 }
 footer { color: var(--muted); border-top: 1px solid var(--line); }
 footer a { color: var(--ink); }
+
+.manual-block h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.manual-block p { margin: 0 0 0.75rem; line-height: 1.55; }
+.note.subtle { font-size: 0.92rem; color: var(--muted); margin-top: 0; }
+.procedure-fold {
+  margin: 0.75rem 0 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--pad);
+  padding: 0.5rem 0.85rem;
+}
+.procedure-fold summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--trace);
+}
+.procedure-text {
+  margin: 0.75rem 0 0.25rem;
+  max-height: min(70vh, 640px);
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.steps li span { line-height: 1.45; }
 
 @keyframes blink { 50% { opacity: 0.25; } }
 @media (prefers-reduced-motion: reduce) {

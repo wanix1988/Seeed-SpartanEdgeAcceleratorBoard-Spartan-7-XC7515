@@ -1,46 +1,9 @@
-export type TrackId = "intro" | "video" | "algo" | "packet";
-export type WidgetId = "power" | "blink" | "boot" | "hdmi" | "pipeline" | "sobel" | "aes" | "packet";
-export type PartId =
-  | "usb"
-  | "power"
-  | "k5"
-  | "fpga"
-  | "esp32"
-  | "hdmi"
-  | "csi"
-  | "sd"
-  | "led"
-  | "io"
-  | "jtag"
-  | "adc"
-  | "flash"
-  | "txs";
+import { manualLessons, manualTracks } from "./experimentCatalog";
+import type { Lesson, PartId, Track, TrackId } from "./catalog-types";
 
-export type Lesson = {
-  id: string;
-  track: TrackId;
-  title: string;
-  heading: string;
-  goal: string;
-  learn: string[];
-  steps: string[];
-  command: string;
-  note: string;
-  parts: PartId[];
-  widget: WidgetId;
-  code: { language: string; source: string };
-  sourceHref: string;
-  sourceLabel: string;
-};
+export type { Lesson, PartId, Track, TrackId, WidgetId } from "./catalog-types";
 
-export type Track = {
-  id: TrackId;
-  title: string;
-  summary: string;
-  lessonIds: string[];
-};
-
-export const tracks: Track[] = [
+const coreTracks: Track[] = [
   {
     id: "intro",
     title: "入门",
@@ -67,10 +30,12 @@ export const tracks: Track[] = [
   },
 ];
 
+export const tracks: Track[] = [...coreTracks, ...manualTracks];
+
 const sea = "https://github.com/wanix1988/SEA/tree/master";
 const boot = "https://github.com/wanix1988/spartan-edge-esp32-boot";
 
-export const lessons: Lesson[] = [
+const coreLessons: Lesson[] = [
   {
     id: "00",
     track: "intro",
@@ -340,6 +305,8 @@ UDP 跟在 IHL×4 之后`,
     sourceLabel: "verilog-ethernet",
   },
 ];
+
+export const lessons: Lesson[] = [...coreLessons, ...manualLessons];
 
 export const parts: { id: PartId; name: string; detail: string }[] = [
   { id: "usb", name: "USB Type-C", detail: "5 V 供电，CP2102 转串口。" },

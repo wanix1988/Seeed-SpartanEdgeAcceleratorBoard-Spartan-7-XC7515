@@ -1,7 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { lessons, lessonById, parts, tracks, type Lesson, type PartId } from "../content/catalog";
+import { stepCountForLesson } from "../content/manualBundle";
 import { lessonDone, toggleStep, visitLesson, type Progress } from "../domain/progress";
 import { BoardDiagram } from "../features/BoardDiagram";
+import {
+  hasManualContent,
+  ManualLangTabs,
+  ManualLessonPanels,
+  manualGoalForLesson,
+  manualStepsForLesson,
+} from "../features/ManualLessonPanels";
+import { isGenericManualCommand } from "../features/manualDedupe";
+import type { ManualLang } from "../features/manualI18n";
+import { manualUi } from "../features/manualI18n";
 import { Simulator } from "../labs/Simulators";
 import { loadProgress, saveProgress } from "../lib/storage";
 
@@ -45,7 +56,7 @@ export function App() {
     }
   }, [route]);
 
-  const doneCount = lessons.filter((lesson) => lessonDone(progress, lesson.id, lesson.steps.length)).length;
+  const doneCount = lessons.filter((lesson) => lessonDone(progress, lesson.id, stepCountForLesson(lesson))).length;
 
   return (
     <>
@@ -83,7 +94,7 @@ export function App() {
             onToggle={(index) => {
               const lesson = lessonById(route.id);
               if (!lesson) return;
-              setProgress((current) => toggleStep(current, lesson.id, lesson.steps.length, index));
+              setProgress((current) => toggleStep(current, lesson.id, stepCountForLesson(lesson), index));
             }}
           />
         ) : null}
@@ -120,7 +131,7 @@ function Home({ progress, doneCount }: { progress: Progress; doneCount: number }
       ) : null}
       {tracks.map((track) => {
         const items = track.lessonIds.map((id) => lessonById(id)).filter((item): item is Lesson => item !== undefined);
-        const finished = items.filter((item) => lessonDone(progress, item.id, item.steps.length)).length;
+        const finished = items.filter((item) => lessonDone(progress, item.id, stepCountForLesson(item))).length;
         return (
           <section key={track.id} className="track">
             <header>
@@ -136,7 +147,7 @@ function Home({ progress, doneCount }: { progress: Progress; doneCount: number }
                   <a href={`#/lessons/${lesson.id}`}>
                     <b>{lesson.id}</b>
                     <span>{lesson.title}</span>
-                    {lessonDone(progress, lesson.id, lesson.steps.length) ? <i>完成</i> : null}
+                    {lessonDone(progress, lesson.id, stepCountForLesson(lesson)) ? <i>完成</i> : null}
                   </a>
                 </li>
               ))}
@@ -158,6 +169,7 @@ function LessonPage({
   onToggle: (index: number) => void;
 }) {
   const [view, setView] = useState<"lab" | "code">("lab");
+  const [manualLang, setManualLang] = useState<ManualLang>("zh");
   if (!lesson) {
     return (
       <div className="sheet">
@@ -171,6 +183,13 @@ function LessonPage({
   const index = track?.lessonIds.indexOf(lesson.id) ?? 0;
   const nextId = track && index >= 0 ? track.lessonIds[index + 1] : undefined;
   const next = nextId ? lessonById(nextId) : undefined;
+  const manual = hasManualContent(lesson.id);
+  const stepList = manualStepsForLesson(lesson.id, lesson.steps, manualLang);
+  const stepTotal = stepList.length;
+  const manualTexts = manualGoalForLesson(lesson.id, lesson.goal, lesson.learn, manualLang);
+  const ui = manualUi[manualLang];
+  const showLearn = manualTexts.learn.length > 0;
+  const showCommand = !manual || !isGenericManualCommand(lesson.command);
 
   return (
     <article className="sheet lesson">
@@ -186,6 +205,7 @@ function LessonPage({
           读代码
         </button>
       </div>
+      {view === "lab" && manual ? <ManualLangTabs lang={manualLang} onChange={setManualLang} /> : null}
       {view === "code" ? (
         <section>
           <pre>
@@ -198,30 +218,38 @@ function LessonPage({
       ) : (
         <>
           <section>
-            <h2>目标</h2>
-            <p>{lesson.goal}</p>
-            <ul className="learn">
-              {lesson.learn.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <h2>{manual ? ui.goal : "目标"}</h2>
+            <p>{manualTexts.goal}</p>
+            {showLearn ? (
+              <ul className="learn">
+                {manualTexts.learn.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
           </section>
+          <ManualLessonPanels lessonId={lesson.id} lang={manualLang} />
           <section>
             <h2>用到哪里</h2>
             <BoardDiagram active={lesson.parts} />
             <p className="note">拖动旋转，滚轮缩放。亮起的区域是这一课用到的器件。microSD 在板子背面，把板子转过去就能看到。</p>
           </section>
+          {showCommand ? (
+            <section>
+              <h2>命令</h2>
+              <pre>
+                <code>{lesson.command}</code>
+              </pre>
+            </section>
+          ) : null}
           <section>
-            <h2>命令</h2>
-            <pre>
-              <code>{lesson.command}</code>
-            </pre>
-          </section>
-          <section>
-            <h2>步骤</h2>
+            <h2>{manual && stepTotal > lesson.steps.length ? ui.steps : "步骤"}</h2>
+            <p className="note subtle">
+              {manual && stepTotal > lesson.steps.length ? ui.stepsHint : null}
+            </p>
             <ol className="steps">
-              {lesson.steps.map((step, stepIndex) => (
-                <li key={step}>
+              {stepList.map((step, stepIndex) => (
+                <li key={`${stepIndex}-${step.slice(0, 40)}`}>
                   <label>
                     <input type="checkbox" checked={checks[stepIndex] === true} onChange={() => onToggle(stepIndex)} />
                     <span>{step}</span>
