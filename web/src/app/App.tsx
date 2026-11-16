@@ -264,7 +264,10 @@ function BoardPage() {
   return (
     <div className="sheet">
       <h1>板子上的功能块</h1>
-      <p className="lede">拖动旋转这块板，点器件或连线上的名字。翻到背面能看到 microSD、ADC1173、W25Q32 和 TXS0104。封装脚位以原理图为准。</p>
+      <p className="lede">
+        拖动旋转这块板，点器件或连线上的名字。翻到背面能看到 microSD、ADC1173、W25Q32 和 TXS0104。点「走进芯片内部」可浏览
+        XC7S15 各功能块及参数。封装脚位以原理图为准。
+      </p>
       <BoardDiagram active={[active]} onSelect={setActive} />
       <div className="part-list">
         {parts.map((item) => (

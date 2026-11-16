@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { parts, type PartId } from "../content/catalog";
+import { FpgaDieView } from "./FpgaDieView";
 import outline from "./board-outline.json";
 
 type Side = "left" | "right";
@@ -76,6 +77,7 @@ function place(rect: [number, number, number, number], face: Face) {
 }
 
 export function BoardDiagram({ active, onSelect }: { active: PartId[]; onSelect?: (id: PartId) => void }) {
+  const [insideDie, setInsideDie] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const resetRef = useRef<() => void>(() => undefined);
@@ -88,6 +90,7 @@ export function BoardDiagram({ active, onSelect }: { active: PartId[]; onSelect?
   selectRef.current = onSelect;
 
   useEffect(() => {
+    if (insideDie) return;
     const stage = stageRef.current;
     const canvas = canvasRef.current;
     if (!stage || !canvas) return;
@@ -315,9 +318,19 @@ export function BoardDiagram({ active, onSelect }: { active: PartId[]; onSelect?
       });
       renderer.dispose();
     };
-  }, []);
+  }, [insideDie]);
+
+  if (insideDie) {
+    return (
+      <div className="stage-wrap">
+        <FpgaDieView />
+        <StageActions inside onBack={() => setInsideDie(false)} />
+      </div>
+    );
+  }
 
   return (
+    <div className="stage-wrap">
     <div className="stage3d" ref={stageRef}>
       <canvas ref={canvasRef} aria-hidden="true" />
       <svg className="leaders" aria-hidden="true">
@@ -372,9 +385,34 @@ export function BoardDiagram({ active, onSelect }: { active: PartId[]; onSelect?
           </span>
         );
       })}
-      <button type="button" className="stage-reset" onClick={() => resetRef.current()}>
-        复位视角
-      </button>
+    </div>
+    <StageActions onEnterDie={() => setInsideDie(true)} onReset={() => resetRef.current()} />
+    </div>
+  );
+}
+
+function StageActions(props: {
+  inside?: boolean;
+  onEnterDie?: () => void;
+  onBack?: () => void;
+  onReset?: () => void;
+}) {
+  return (
+    <div className="stage-actions">
+      {props.inside ? (
+        <button type="button" className="stage-action" onClick={props.onBack}>
+          返回板级视图
+        </button>
+      ) : (
+        <>
+          <button type="button" className="stage-action" onClick={props.onReset}>
+            复位视角
+          </button>
+          <button type="button" className="stage-action hot" onClick={props.onEnterDie}>
+            走进芯片内部
+          </button>
+        </>
+      )}
     </div>
   );
 }
